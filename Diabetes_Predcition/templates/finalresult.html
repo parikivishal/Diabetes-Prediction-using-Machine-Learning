@@ -1,0 +1,71 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+</head>
+<style>
+    body{
+        background-image:url("{% static 'img-2.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .main{
+            position: fixed;
+            top: 30px;
+            left: 410px;
+            width: 550px;
+            background-color:#ffffff;
+            border-radius: 10px;
+            align-items: center;
+            padding: 5%;
+        }
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: darkblue;
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+    <body>
+     <div align = 'center' class="main">
+         <h1>
+             <u>These are the results</u>
+         </h1>
+         <form method="post">
+             <table>
+                 <tr>
+                     <td align="right">Your Diabetes millitus result is:</td>
+                     <td align="left">{{ in1 }}</td>
+                 </tr>
+                 <tr>
+                     <td align="right">Your daily calorie requirement is:</td>
+                     <td align="left">{{ in2 }}
+                     </td>
+                 </tr>
+             </table>
+
+         </form><br>
+<button id="redirectButton">Calculate Diet Again</button>
+         <button id="redirectButton1">Predict Again</button>
+     </div>
+    </body>
+<script>
+        // JavaScript to handle button click and redirect
+        document.getElementById('redirectButton').addEventListener('click', function() {
+            window.location.href = '/diet/';  // Replace with your desired URL
+        });
+        document.getElementById('redirectButton1').addEventListener('click', function() {
+            window.location.href = '/predict/';  // Replace with your desired URL
+        });
+    </script>
+</html>

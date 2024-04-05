@@ -1,0 +1,78 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+</head>
+<style>
+    body{
+        background-image:url("{% static 'img-2.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .main{
+            position: fixed;
+            top: 80px;
+            left: 410px;
+            width: 550px;
+            background-color:#ffffff;
+            border-radius: 10px;
+            align-items: center;
+            padding: 5%;
+        }
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: darkblue;
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+    <body>
+     <div align = 'center' class="main">
+         <h1>
+             <u>Please enter the following information:</u>
+         </h1>
+         <form method="post">
+             {% csrf_token %}
+             <table>
+                 <tr>
+                     <td align="right">Height (in cm):</td>
+                     <td align="left"><input type="number" name="height"></td>
+                 </tr>
+                 <tr>
+                     <td align="right">Weight (in kg):</td>
+                     <td align="left"><input type="number" name="weight">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Age (in yrs):</td>
+                     <td align="left"><input type="number" name="age">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Activity:</td>
+                     <td align="left"><select name="activity">
+                        <option value="little">Little</option>
+                        <option value="light">Light</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="hard">Hard</option>
+                        <option value="veryhard">Very Hard</option>
+                     </select>
+                     </td>
+                 </tr>
+             </table>
+             <input type="submit" value="Calculate">
+         </form>
+     </div>
+    </body>
+
+</html>

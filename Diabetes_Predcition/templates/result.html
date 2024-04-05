@@ -1,0 +1,144 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+</head>
+<style>
+    body{
+        background-image:url("{% static 'img-2.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .main{
+            position: fixed;
+            top: 30px;
+            left: 410px;
+            width: 550px;
+            background-color:#ffffff;
+            border-radius: 10px;
+            align-items: center;
+            padding: 5%;
+        }
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: darkblue;
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+    <body>
+     <div align = 'center' class="main">
+         <h1>
+             <u>You Entered Following Values</u>
+         </h1>
+
+             <table>
+                 <tr>
+                     <td align="right">Age:</td>
+                     <td align="left">{{ inp1 }}</td>
+                 </tr>
+                 <tr>
+                     <td align="right">Gender:</td>
+                     <td align="left">{{ inp2 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Family Diabetes:</td>
+                     <td align="left">{{ inp3 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">High BP:</td>
+                     <td align="left">{{ inp4 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Physically Active:</td>
+                     <td align="left">{{ inp5 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">BMI:</td>
+                     <td align="left">{{ inp6 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Smoking:</td>
+                     <td align="left">{{ inp7 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Sleep:</td>
+                     <td align="left">{{ inp8 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Sound Sleep:</td>
+                     <td align="left">{{ inp9 }}
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">Alcohol:</td>
+                     <td align="left">{{ inp10 }}
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">Regular Medicine:</td>
+                     <td align="left">{{ inp11 }}
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">Junk Food:</td>
+                     <td align="left">{{ inp12 }}
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">Stress:</td>
+                     <td align="left">{{ inp13 }}
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">BP Level:</td>
+                     <td align="left">{{ inp14 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Pregnancies:</td>
+                     <td align="left">{{ inp15 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Pdiabetes:</td>
+                     <td align="left">{{ inp16 }}
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Urination Frequency:</td>
+                     <td align="left">{{ inp17 }}
+                     </td>
+                 </tr>
+
+             </table>
+             <h2>Result:{{result2}}</h2>
+             <h3>{{ tips }}</h3>
+         <button id="redirectButton">Diet Plan</button>
+
+     </div>
+    </body>
+<script>
+        // JavaScript to handle button click and redirect
+        document.getElementById('redirectButton').addEventListener('click', function() {
+            window.location.href = '/diet/';  // Replace with your desired URL
+        });
+    </script>
+</html>

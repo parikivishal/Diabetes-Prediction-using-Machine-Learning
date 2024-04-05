@@ -1,0 +1,186 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+</head>
+<style>
+    body{
+        background-image:url("{% static 'img-2.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .main{
+            position: fixed;
+            top: 80px;
+            left: 410px;
+            width: 550px;
+            background-color:#ffffff;
+            border-radius: 10px;
+            align-items: center;
+            padding: 5%;
+        }
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: darkblue;
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+    <body>
+     <div align = 'center' class="main">
+         <h1>
+             <u>Please enter the following information:</u>
+         </h1>
+         <form method="post">
+             {% csrf_token %}
+             <table>
+                 <tr>
+                     <td align="right">Age:</td>
+                     <td align="left"><select name="age">
+                         <option value="40-49">40-49</option>
+                         <option value="50-59">50-59</option>
+                         <option value="60 or older">60 or older</option>
+                         <option value="Less than 40">Less than 40</option>
+                     </select></td>
+                 </tr>
+                 <tr>
+                     <td align="right">Gender:</td>
+                     <td align="left"><select name="gender">
+                         <option value="Male">Male</option>
+                         <option value="Female">Female</option>
+                     </select>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Family Diabetes:</td>
+                     <td align="left"><select name="fdiabetes">
+                         <option value="Yes">Yes</option>
+                         <option value="No">No</option>
+                     </select>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">High BP:</td>
+                     <td align="left"><select name="highbp">
+                         <option value="Yes">Yes</option>
+                         <option value="No">No</option>
+                     </select>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Physically Active:</td>
+                     <td align="left"><select name="pactive">
+                         <option value="less than half an hr">less than half an hr</option>
+                         <option value="more than half an hr">more than half an hr</option>
+                         <option value="none">none</option>
+                         <option value="one hr or more">one hr or more</option>
+                     </select>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">BMI:</td>
+                     <td align="left"><input type="number" name="bmi">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Smoking:</td>
+                     <td align="left"><select name="smoking">
+                         <option value="Yes">Yes</option>
+                         <option value="No">No</option>
+                     </select>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Sleep:</td>
+                     <td align="left"><input type="number" name="sleep">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Sound Sleep:</td>
+                     <td align="left"><input type="number" name="ssleep">
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">Alcohol:</td>
+                     <td align="left"><select name="alcohol">
+                         <option value="Yes">Yes</option>
+                         <option value="No">No</option>
+                     </select>
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">Regular Medicine:</td>
+                     <td align="left"><select name="medicine">
+                         <option value="Some times">Some times</option>
+                         <option value="No">No</option>
+                         <option value="Regular">Regular</option>
+                     </select>
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">Junk Food:</td>
+                     <td align="left"><select name="junk">
+                         <option value="Always">Always</option>
+                         <option value="Ocasionally">Ocasionally</option>
+                         <option value="Often">Often</option>
+                         <option value="Very Often">Very Often</option>
+                     </select>
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">Stress:</td>
+                     <td align="left"><select name="stress">
+                         <option value="Always">Always</option>
+                         <option value="Not at all">Not at all</option>
+                         <option value="Sometimes">Sometimes</option>
+                         <option value="Very Often">Very Often</option>
+                     </select>
+                     </td>
+                 </tr>
+                  <tr>
+                     <td align="right">BP Level:</td>
+                     <td align="left"><select name="bplevel">
+                         <option value="High">High</option>
+                         <option value="Low">Low</option>
+                         <option value="Normal">Normal</option>
+                     </select>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Pregnancies:</td>
+                     <td align="left"><input type="number" name="pregnancies">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Pdiabetes:</td>
+                     <td align="left"><select name="pdiabetes">
+                         <option value="No">No</option>
+                         <option value="Yes">Yes</option>
+                     </select>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td align="right">Urination Frequency:</td>
+                     <td align="left"><select name="ufrequency">
+                         <option value="Not Much">Not Much</option>
+                         <option value="Quite Often">Quite Often</option>
+                     </select>
+                     </td>
+                 </tr>
+             </table>
+             <input type="submit">
+         </form>
+     </div>
+    </body>
+
+</html>
